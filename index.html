@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendario de partidos · Alajuelense, Boca, Inter Miami, Barcelona</title>
+<meta name="description" content="Calendario con los próximos partidos de Liga Deportiva Alajuelense, Boca Juniors, Inter Miami y FC Barcelona, en hora de Costa Rica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch:#0c2118;
+    --pitch-2:#123024;
+    --pitch-3:#0f2a1f;
+    --chalk:#f0f4ec;
+    --chalk-dim:rgba(240,244,236,.55);
+    --chalk-line:rgba(240,244,236,.18);
+    --lda:#e23a3a;
+    --boca:#f2c230;
+    --miami:#ff7eb6;
+    --barca:#3d7bff;
+    --radius:3px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--pitch);
+    color:var(--chalk);
+    font-family:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:28px 18px 72px}
+
+  /* ---------- Encabezado ---------- */
+  header{border-bottom:1px solid var(--chalk-line);padding-bottom:22px}
+  .kicker{
+    font-family:"Barlow Condensed",sans-serif;
+    font-weight:600;font-size:1rem;letter-spacing:.02em;
+    color:var(--chalk-dim);margin:0 0 2px;
+  }
+  h1{
+    font-family:"Barlow Condensed",sans-serif;
+    font-weight:700;
+    font-size:clamp(2.4rem,9vw,4.2rem);
+    line-height:.94;
+    margin:0;
+    letter-spacing:-.01em;
+  }
+  h1 .anio{display:block;font-weight:500;font-size:.34em;color:var(--chalk-dim);letter-spacing:.06em;margin-top:6px}
+  .siguiente{
+    margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+    background:var(--pitch-2);border-left:3px solid var(--chalk);
+    padding:12px 14px;
+  }
+  .siguiente img{width:30px;height:30px;object-fit:contain}
+  .siguiente .txt{min-width:0}
+  .siguiente .rival{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.3rem;line-height:1.1}
+  .siguiente .meta{font-size:.86rem;color:var(--chalk-dim)}
+  .cuenta{
+    margin-left:auto;font-family:"Barlow Condensed",sans-serif;
+    font-weight:700;font-size:1.05rem;text-align:right;white-space:nowrap;
+  }
+
+  /* ---------- Filtros ---------- */
+  .filtros{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 14px}
+  .chip{
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:1rem;
+    background:transparent;color:var(--chalk-dim);
+    border:1px solid var(--chalk-line);border-radius:999px;
+    padding:5px 13px 5px 9px;cursor:pointer;display:flex;align-items:center;gap:7px;
+  }
+  .chip .punto{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+  .chip[aria-pressed="true"]{color:var(--chalk);border-color:var(--c);background:rgba(255,255,255,.05)}
+  .chip:focus-visible,.dia:focus-visible,.navbtn:focus-visible,.recargar:focus-visible{outline:2px solid var(--chalk);outline-offset:2px}
+
+  /* ---------- Barra de mes ---------- */
+  .mesbar{display:flex;align-items:baseline;gap:14px;margin:26px 0 10px}
+  .mesbar h2{
+    font-family:"Barlow Condensed",sans-serif;font-weight:700;
+    font-size:1.7rem;margin:0;text-transform:capitalize;
+  }
+  .navbtn{
+    background:transparent;border:1px solid var(--chalk-line);color:var(--chalk);
+    width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;line-height:1;
+  }
+  .navbtn[disabled]{opacity:.3;cursor:default}
+  .mesbar .sp{margin-left:auto;display:flex;gap:8px}
+
+  /* ---------- Cuadrícula tipo cancha ---------- */
+  .cancha{
+    border:1px solid var(--chalk-line);
+    background:
+      repeating-linear-gradient(90deg,var(--pitch-3) 0 14.2857%,var(--pitch-2) 14.2857% 28.5714%);
+  }
+  .semana-cab,.grid{display:grid;grid-template-columns:repeat(7,1fr)}
+  .semana-cab div{
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:.82rem;
+    color:var(--chalk-dim);text-align:center;padding:7px 0;
+    border-bottom:1px solid var(--chalk-line);
+  }
+  .dia{
+    all:unset;
+    position:relative;display:flex;flex-direction:column;gap:3px;
+    min-height:74px;padding:6px 6px 8px;cursor:pointer;
+    border-right:1px solid var(--chalk-line);border-bottom:1px solid var(--chalk-line);
+    font-family:inherit;color:inherit;
+  }
+  .dia:nth-child(7n){border-right:0}
+  .dia.fuera{opacity:.32}
+  .dia .num{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:1.05rem;line-height:1}
+  .dia.hoy .num{
+    background:var(--chalk);color:var(--pitch);border-radius:50%;
+    width:23px;height:23px;display:grid;place-items:center;margin:-2px 0 1px -2px;
+  }
+  .dia[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--chalk)}
+  .dia .mini{
+    display:flex;align-items:center;gap:4px;
+    font-size:.7rem;line-height:1.25;color:var(--chalk);
+    border-left:3px solid var(--c);padding-left:4px;
+  }
+  .dia .mini span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .dia .mas{font-size:.66rem;color:var(--chalk-dim)}
+
+  /* ---------- Detalle ---------- */
+  .detalle{margin-top:26px}
+  .detalle h3{
+    font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.25rem;
+    margin:0 0 12px;text-transform:capitalize;
+  }
+  .partido{
+    display:flex;gap:12px;align-items:center;
+    padding:12px 0;border-top:1px solid var(--chalk-line);
+  }
+  .partido .escudos{display:flex;align-items:center;gap:6px;flex:none}
+  .partido .escudos img{width:34px;height:34px;object-fit:contain}
+  .partido .vs{font-family:"Barlow Condensed",sans-serif;font-size:.8rem;color:var(--chalk-dim)}
+  .partido .info{min-width:0;flex:1}
+  .partido .enfrent{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.15rem;line-height:1.15}
+  .partido .sub{font-size:.85rem;color:var(--chalk-dim)}
+  .partido .hora{
+    font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.15rem;
+    text-align:right;white-space:nowrap;flex:none;
+  }
+  .partido .hora small{display:block;font-weight:500;font-size:.68rem;color:var(--chalk-dim)}
+  .marca{border-left:3px solid var(--c);padding-left:9px;margin-left:-12px}
+
+  .aviso{
+    border:1px dashed var(--chalk-line);padding:16px;margin-top:22px;
+    color:var(--chalk-dim);font-size:.92rem;
+  }
+  .aviso strong{color:var(--chalk);font-weight:600}
+  .recargar{
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:.95rem;
+    background:transparent;border:1px solid var(--chalk-line);color:var(--chalk);
+    padding:5px 12px;border-radius:999px;cursor:pointer;
+  }
+  footer{
+    margin-top:40px;padding-top:16px;border-top:1px solid var(--chalk-line);
+    font-size:.8rem;color:var(--chalk-dim);
+  }
+  footer a{color:var(--chalk-dim)}
+  footer details{margin-top:10px}
+  footer summary{cursor:pointer}
+  footer .fuente-ok{color:var(--chalk)}
+  footer .fuente-no{color:var(--chalk-dim)}
+  footer .fuente-lista{margin:8px 0 0;padding:0;list-style:none;columns:2;font-size:.78rem}
+  @media (max-width:560px){footer .fuente-lista{columns:1}}
+  .cargando{font-size:.9rem;color:var(--chalk-dim);padding:14px 0}
+  @media (max-width:560px){
+    .dia{min-height:62px;padding:5px 4px 6px}
+    .dia .mini{font-size:.62rem;border-left-width:2px;padding-left:3px}
+    .dia .mini span{display:none}
+    .dia .mini{width:16px}
+    .partido .escudos img{width:28px;height:28px}
+    .cuenta{margin-left:0;text-align:left;width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Hoy es</p>
+    <h1><span id="hoy-titulo">…</span><span class="anio" id="hoy-anio"></span></h1>
+    <div class="siguiente" id="siguiente" hidden></div>
+  </header>
+
+  <div class="filtros" id="filtros"></div>
+
+  <div class="mesbar">
+    <button class="navbtn" id="mes-prev" aria-label="Mes anterior">‹</button>
+    <h2 id="mes-titulo">—</h2>
+    <button class="navbtn" id="mes-next" aria-label="Mes siguiente">›</button>
+    <div class="sp"><button class="recargar" id="recargar">Actualizar</button></div>
+  </div>
+
+  <div class="cancha">
+    <div class="semana-cab">
+      <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <div class="cargando" id="estado">Buscando partidos…</div>
+  <section class="detalle" id="detalle"></section>
+
+  <footer>
+    <p>Horas en tiempo de Costa Rica (UTC−6), tomadas de LaLiga, Concacaf, Unafut, la Liga Profesional argentina,
+      Inter Miami CF y prensa deportiva de cada país. Las ligas confirman día y hora de cada jornada con una o dos
+      semanas de anticipación, así que lo que aparece como «Por confirmar» se completa después.</p>
+    <p id="pie-actualizado"></p>
+    <details id="fuentes"><summary>Competencias consultadas</summary><div id="fuentes-lista"></div></details>
+  </footer>
+</div>
+
+<script>
+/* =========================================================================
+   Calendario de partidos — Alajuelense · Boca · Inter Miami · Barcelona
+   Datos: API pública de ESPN (sin llave ni registro).
+   Si existe un archivo fixtures.json reciente al lado de este index.html
+   (lo genera la tarea semanal de GitHub Actions), se usa ese archivo.
+   Si no, la página consulta ESPN directamente desde el navegador.
+   ========================================================================= */
+
+const TZ = 'America/Costa_Rica';
+const BASE = 'https://site.api.espn.com/apis/site/v2/sports/soccer';
+const MESES_ADELANTE = 5;
+const CACHE_KEY = 'calendario-partidos-v1';
+const CACHE_HORAS = 6;
+/* ESPN quedó como último recurso desde el navegador. La actualización
+   automática ahora la hace la tarea semanal con los calendarios de Fixtur.es. */
+const USAR_ESPN = false;
+
+const EQUIPOS = [
+  {
+    key:'lda', logo:'https://a.espncdn.com/i/teamlogos/soccer/500/2057.png', nombre:'Liga Deportiva Alajuelense', corto:'Alajuelense', color:'var(--lda)',
+    liga:'crc.1',
+    alias:['alajuelense','liga deportiva alajuelense','l.d. alajuelense','ld alajuelense'],
+    torneos:[
+      {code:'crc.1', label:'Primera División'},
+      {code:'concacaf.champions', label:'Concacaf Champions Cup'},
+      {code:'concacaf.central_american_cup', label:'Copa Centroamericana'},
+      {code:'concacaf.centroamericana', label:'Copa Centroamericana'},
+      {code:'concacaf.central', label:'Copa Centroamericana'},
+      {code:'concacaf.league', label:'Copa Centroamericana'},
+      {code:'crc.copa', label:'Torneo de Copa'},
+      {code:'crc.cup', label:'Torneo de Copa'},
+      {code:'crc.copa_costa_rica', label:'Torneo de Copa'},
+      {code:'club.friendly', label:'Amistoso'}
+    ]
+  },
+  {
+    key:'boca', logo:'https://a.espncdn.com/i/teamlogos/soccer/500/5.png', nombre:'Boca Juniors', corto:'Boca', color:'var(--boca)',
+    liga:'arg.1',
+    alias:['boca juniors','boca jrs','ca boca juniors'],
+    torneos:[
+      {code:'arg.1', label:'Liga Profesional Argentina'},
+      {code:'arg.copa', label:'Copa Argentina'},
+      {code:'conmebol.libertadores', label:'Copa Libertadores'},
+      {code:'conmebol.sudamericana', label:'Copa Sudamericana'},
+      {code:'conmebol.recopa', label:'Recopa Sudamericana'},
+      {code:'club.friendly', label:'Amistoso'}
+    ]
+  },
+  {
+    key:'miami', logo:'https://a.espncdn.com/i/teamlogos/soccer/500/20232.png', nombre:'Inter Miami CF', corto:'Inter Miami', color:'var(--miami)',
+    liga:'usa.1',
+    alias:['inter miami','inter miami cf'],
+    torneos:[
+      {code:'usa.1', label:'MLS'},
+      {code:'concacaf.leagues.cup', label:'Leagues Cup'},
+      {code:'concacaf.leagues_cup', label:'Leagues Cup'},
+      {code:'concacaf.champions', label:'Concacaf Champions Cup'},
+      {code:'campeones.cup', label:'Campeones Cup'},
+      {code:'usa.open', label:'US Open Cup'},
+      {code:'club.friendly', label:'Amistoso'}
+    ]
+  },
+  {
+    key:'barca', logo:'https://a.espncdn.com/i/teamlogos/soccer/500/83.png', nombre:'FC Barcelona', corto:'Barcelona', color:'var(--barca)',
+    liga:'esp.1',
+    alias:['barcelona','fc barcelona','barça'],
+    torneos:[
+      {code:'esp.1', label:'LaLiga'},
+      {code:'uefa.champions', label:'UEFA Champions League'},
+      {code:'esp.copa_del_rey', label:'Copa del Rey'},
+      {code:'esp.super_cup', label:'Supercopa de España'},
+      {code:'uefa.super_cup', label:'Supercopa de Europa'},
+      {code:'fifa.cwc', label:'Mundial de Clubes'},
+      {code:'esp.joan_gamper', label:'Trofeo Joan Gamper'},
+      {code:'club.friendly', label:'Amistoso'}
+    ]
+  }
+];
+
+/* ---------- utilidades de fecha en hora de Costa Rica ---------- */
+const fClave = new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'});
+const fHora  = new Intl.DateTimeFormat('es-CR',{timeZone:TZ,hour:'numeric',minute:'2-digit',hour12:true});
+const fDiaLargo = new Intl.DateTimeFormat('es-CR',{timeZone:TZ,weekday:'long',day:'numeric',month:'long'});
+const fMes = new Intl.DateTimeFormat('es-CR',{timeZone:'UTC',month:'long',year:'numeric'});
+
+const claveDia = iso => fClave.format(new Date(iso));            // "2026-09-09"
+const horaCR   = iso => fHora.format(new Date(iso))
+  .replace(/[\u202f\u00a0]/g,' ')
+  .replace('a. m.','a.m.').replace('p. m.','p.m.');
+const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+
+function textoDiaLargo(clave){
+  const [y,m,d] = clave.split('-').map(Number);
+  return fDiaLargo.format(new Date(Date.UTC(y,m-1,d,12)));
+}
+
+/* ---------- estado ---------- */
+let partidos = [];
+let activos = new Set(EQUIPOS.map(e=>e.key));
+let hoyClave = fClave.format(new Date());
+let [anioVista, mesVista] = [Number(hoyClave.slice(0,4)), Number(hoyClave.slice(5,7))-1];
+let diaSel = null;
+let actualizado = null;
+let FUENTES = [];
+
+const eq = k => EQUIPOS.find(e=>e.key===k);
+const $ = id => document.getElementById(id);
+
+/* ---------- descarga de datos ---------- */
+async function json(url){
+  const r = await fetch(url,{cache:'no-store'});
+  if(!r.ok) throw new Error(url+' → '+r.status);
+  return r.json();
+}
+
+async function idDeEquipo(equipo){
+  const data = await json(`${BASE}/${equipo.liga}/teams`);
+  const lista = data?.sports?.[0]?.leagues?.[0]?.teams || [];
+  for(const it of lista){
+    const t = it.team || {};
+    const nombres = [t.displayName,t.shortDisplayName,t.name,t.nickname,t.location].map(norm);
+    if(equipo.alias.some(a => nombres.includes(norm(a)) || nombres.some(n => n && n.includes(norm(a))))){
+      return {id:t.id, logo:t.logos?.[0]?.href || ''};
+    }
+  }
+  throw new Error('No se encontró '+equipo.nombre+' en '+equipo.liga);
+}
+
+function normalizarEvento(ev, equipo, torneo, idEquipo){
+  const c = (ev.competitions && ev.competitions[0]) || {};
+  const rivales = c.competitors || [];
+  const yo = rivales.find(x => String(x.team?.id) === String(idEquipo));
+  const otro = rivales.find(x => x !== yo);
+  if(!yo || !otro) return null;
+  const iso = c.date || ev.date;
+  if(!iso) return null;
+  const estado = c.status?.type?.state || ev.status?.type?.state || 'pre';
+  return {
+    id: String(ev.id),
+    equipo: equipo.key,
+    iso,
+    local: yo.homeAway === 'home',
+    rival: otro.team?.displayName || otro.team?.name || 'Rival por definir',
+    rivalLogo: otro.team?.logos?.[0]?.href || otro.team?.logo || '',
+    miLogo: yo.team?.logos?.[0]?.href || yo.team?.logo || '',
+    torneo: torneo.label,
+    sede: c.venue?.fullName || '',
+    horaConfirmada: ev.timeValid !== false,
+    estado,
+    marcador: (estado === 'post' && yo.score != null && otro.score != null)
+      ? `${yo.score}–${otro.score}` : ''
+  };
+}
+
+async function traerEquipo(equipo){
+  const {id, logo} = await idDeEquipo(equipo);
+  equipo.logo = logo || equipo.logo;
+  const anio = new Date().getUTCFullYear();
+  const temporadas = ['', `?season=${anio}`, `?season=${anio+1}`];
+  const salida = [];
+  for(const torneo of equipo.torneos){
+    let encontrados = 0, respondio = false;
+    for(const t of temporadas){
+      let data;
+      try{
+        data = await json(`${BASE}/${torneo.code}/teams/${id}/schedule${t}`);
+      }catch(e){
+        break;               // el torneo no existe con ese código: no se insiste
+      }
+      respondio = true;
+      const eventos = data?.events || [];
+      for(const ev of eventos){
+        const p = normalizarEvento(ev, equipo, torneo, id);
+        if(p){ salida.push(p); encontrados++; }
+      }
+      if(eventos.some(ev => new Date(ev.date) > new Date())) break;  // temporada vigente ya cubierta
+    }
+    FUENTES.push({equipo:equipo.key, torneo:torneo.label, code:torneo.code, respondio, encontrados});
+  }
+  return salida;
+}
+
+/* Lee un archivo de partidos escritos a mano (partidos.json, manuales.json).
+   Formato de cada partido: equipo, fecha, hora (opcional, 24 h de Costa Rica),
+   rival, torneo, local, sede. */
+async function cargarLista(archivo, prefijo, maxDias){
+  try{
+    const data = await json(archivo+'?t='+Date.now());
+    if(maxDias && data.actualizado &&
+       (Date.now()-new Date(data.actualizado).getTime())/864e5 > maxDias) return [];
+    if(data.fuentes) FUENTES = data.fuentes;
+    if(data.actualizado && !actualizado) actualizado = data.actualizado;
+    return (data.partidos || []).map((m,i) => ({
+      id: prefijo+'-'+i,
+      equipo: m.equipo,
+      iso: new Date(`${m.fecha}T${m.hora || '12:00'}:00-06:00`).toISOString(),
+      local: m.local !== false,
+      rival: m.rival || 'Rival por definir',
+      rivalLogo: m.rivalLogo || '',
+      miLogo: '',
+      torneo: m.torneo || 'Partido',
+      sede: m.sede || '',
+      horaConfirmada: Boolean(m.hora),
+      estado: 'pre',
+      marcador: '',
+      manual: prefijo === 'manual'
+    })).filter(p => eq(p.equipo) && !isNaN(new Date(p.iso)));
+  }catch(e){ return []; }
+}
+
+/* Quita repetidos: primero por identificador y después por equipo y día,
+   para que un partido del calendario propio no aparezca dos veces si además
+   lo trae ESPN. Gana siempre el primero de la lista. */
+function dedup(lista){
+  const porId = new Map(), porDia = new Set(), salida = [];
+  for(const p of lista){
+    const k = p.equipo+'|'+p.id;
+    const d = p.equipo+'|'+claveDia(p.iso);
+    if(porId.has(k) || porDia.has(d)) continue;
+    porId.set(k,p); porDia.add(d); salida.push(p);
+  }
+  return salida.sort((a,b)=> new Date(a.iso)-new Date(b.iso));
+}
+
+async function cargarEnVivo(){
+  FUENTES = [];
+  const partes = await Promise.allSettled(EQUIPOS.map(traerEquipo));
+  const todos = partes.flatMap(p => p.status === 'fulfilled' ? p.value : []);
+  if(!todos.length) throw new Error('sin datos');
+  return todos;
+}
+
+async function cargar({forzar=false}={}){
+  $('estado').textContent = 'Cargando partidos…';
+  if(!forzar){
+    try{
+      const cache = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if(cache && (Date.now()-cache.ts) < CACHE_HORAS*36e5 && cache.partidos?.length){
+        partidos = dedup(cache.partidos); actualizado = cache.actualizado; FUENTES = cache.fuentes || [];
+        pintar(); return;
+      }
+    }catch(e){}
+  }
+  actualizado = null; FUENTES = [];
+  // Orden de prioridad: correcciones a mano, luego lo que trajo la tarea
+  // automática (fixtures.json) y de último el calendario revisado a mano.
+  const manuales = await cargarLista('manuales.json','manual');
+  const automaticos = await cargarLista('fixtures.json','auto', 12);
+  const propios = await cargarLista('partidos.json','cal');
+  let espn = [];
+  if(USAR_ESPN && !automaticos.length){
+    try{ espn = await cargarEnVivo(); }catch(e){}
+  }
+  partidos = dedup(manuales.concat(automaticos, propios, espn));
+  if(!partidos.length){
+    pintar('No se encontró ningún partido. Revisá que el archivo partidos.json esté junto a index.html y que su formato sea válido.');
+    return;
+  }
+  try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ts:Date.now(), actualizado, fuentes:FUENTES, partidos})); }catch(e){}
+  pintar();
+}
+
+/* ---------- pintado ---------- */
+function visibles(){
+  const limite = new Date();
+  limite.setMonth(limite.getMonth()+MESES_ADELANTE);
+  return partidos.filter(p => activos.has(p.equipo) && new Date(p.iso) <= limite);
+}
+
+function porDia(){
+  const m = new Map();
+  for(const p of visibles()){
+    const k = claveDia(p.iso);
+    if(!m.has(k)) m.set(k,[]);
+    m.get(k).push(p);
+  }
+  for(const arr of m.values()) arr.sort((a,b)=> new Date(a.iso)-new Date(b.iso));
+  return m;
+}
+
+function pintarEncabezado(){
+  const txt = fDiaLargo.format(new Date());
+  $('hoy-titulo').textContent = txt.charAt(0).toUpperCase()+txt.slice(1);
+  $('hoy-anio').textContent = hoyClave.slice(0,4);
+
+  const prox = visibles().find(p => new Date(p.iso) >= new Date(Date.now()-2*36e5) && p.estado !== 'post');
+  const cont = $('siguiente');
+  if(!prox){ cont.hidden = true; return; }
+  const e = eq(prox.equipo);
+  const dias = Math.round((new Date(claveDia(prox.iso)+'T12:00:00Z') - new Date(hoyClave+'T12:00:00Z'))/864e5);
+  const cuenta = dias <= 0 ? '¡Hoy!' : dias === 1 ? 'Mañana' : 'En '+dias+' días';
+  cont.hidden = false;
+  cont.style.borderLeftColor = e.color;
+  cont.innerHTML = `
+    ${(prox.miLogo||e.logo)?`<img src="${prox.miLogo||e.logo}" alt="">`:''}
+    ${prox.rivalLogo?`<img src="${prox.rivalLogo}" alt="">`:''}
+    <div class="txt">
+      <div class="rival">${e.corto} ${prox.local?'vs':'visita a'} ${prox.rival}</div>
+      <div class="meta">${prox.torneo} · ${textoDiaLargo(claveDia(prox.iso))} · ${prox.horaConfirmada?horaCR(prox.iso):'hora por confirmar'}</div>
+    </div>
+    <div class="cuenta">${cuenta}</div>`;
+}
+
+function pintarFiltros(){
+  const cont = $('filtros');
+  if(cont.children.length) return;
+  for(const e of EQUIPOS){
+    const b = document.createElement('button');
+    b.className = 'chip';
+    b.style.setProperty('--c', e.color);
+    b.setAttribute('aria-pressed','true');
+    b.innerHTML = `<span class="punto"></span>${e.corto}`;
+    b.onclick = () => {
+      if(activos.has(e.key)) activos.delete(e.key); else activos.add(e.key);
+      if(!activos.size) activos = new Set(EQUIPOS.map(x=>x.key));
+      pintar();
+    };
+    cont.appendChild(b);
+  }
+}
+
+function pintarCalendario(){
+  const mapa = porDia();
+  const grid = $('grid');
+  grid.innerHTML = '';
+  const primero = new Date(Date.UTC(anioVista, mesVista, 1));
+  $('mes-titulo').textContent = (t => t.charAt(0).toUpperCase()+t.slice(1))(fMes.format(primero));
+
+  const desplaz = (primero.getUTCDay()+6)%7;             // semana que arranca el lunes
+  const inicio = new Date(Date.UTC(anioVista, mesVista, 1-desplaz));
+  for(let i=0;i<42;i++){
+    const d = new Date(Date.UTC(inicio.getUTCFullYear(), inicio.getUTCMonth(), inicio.getUTCDate()+i));
+    const clave = d.toISOString().slice(0,10);
+    const delMes = d.getUTCMonth() === mesVista;
+    const lista = mapa.get(clave) || [];
+    const celda = document.createElement('button');
+    celda.className = 'dia'+(delMes?'':' fuera')+(clave===hoyClave?' hoy':'');
+    celda.setAttribute('aria-pressed', String(clave===diaSel));
+    celda.setAttribute('aria-label', textoDiaLargo(clave)+(lista.length?`, ${lista.length} partido${lista.length>1?'s':''}`:', sin partidos'));
+    let html = `<span class="num">${d.getUTCDate()}</span>`;
+    lista.slice(0,3).forEach(p=>{
+      const e = eq(p.equipo);
+      html += `<span class="mini" style="--c:${e.color}"><span>${e.corto}</span></span>`;
+    });
+    if(lista.length>3) html += `<span class="mas">+${lista.length-3}</span>`;
+    celda.innerHTML = html;
+    celda.onclick = () => { diaSel = (diaSel===clave)?null:clave; pintar(); };
+    grid.appendChild(celda);
+  }
+}
+
+function filaPartido(p){
+  const e = eq(p.equipo);
+  const miEscudo = p.miLogo || e.logo || '';
+  const escudoIzq = p.local ? miEscudo : p.rivalLogo;
+  const escudoDer = p.local ? p.rivalLogo : miEscudo;
+  const nombreIzq = p.local ? e.corto : p.rival;
+  const nombreDer = p.local ? p.rival : e.corto;
+  const escudos = [escudoIzq,escudoDer].filter(Boolean).map(u=>`<img src="${u}" alt="">`).join('');
+  return `<div class="partido marca" style="--c:${e.color}">
+    ${escudos?`<div class="escudos">${escudos}</div>`:''}
+    <div class="info">
+      <div class="enfrent">${nombreIzq} <span class="vs">vs</span> ${nombreDer}</div>
+      <div class="sub">${p.local?'De local':'De visita'} · ${p.torneo}${p.manual?' (agregado a mano)':''}${p.sede?' · '+p.sede:''}${p.marcador?' · final '+p.marcador:''}</div>
+    </div>
+    <div class="hora">${p.horaConfirmada?horaCR(p.iso):'Por confirmar'}<small>hora de Costa Rica</small></div>
+  </div>`;
+}
+
+function pintarDetalle(){
+  const cont = $('detalle');
+  const mapa = porDia();
+  if(diaSel){
+    const lista = mapa.get(diaSel) || [];
+    cont.innerHTML = `<h3>${textoDiaLargo(diaSel)}</h3>` +
+      (lista.length ? lista.map(filaPartido).join('')
+        : `<p class="aviso">Ningún equipo juega ese día. Tocá otro día del calendario.</p>`);
+    return;
+  }
+  const claves = [...mapa.keys()].filter(k => k.slice(0,7) === `${anioVista}-${String(mesVista+1).padStart(2,'0')}`).sort();
+  if(!claves.length){
+    cont.innerHTML = `<p class="aviso">No hay partidos programados en este mes para los equipos seleccionados. Usá las flechas para ver otro mes.</p>`;
+    return;
+  }
+  cont.innerHTML = claves.map(k =>
+    `<h3>${textoDiaLargo(k)}</h3>` + mapa.get(k).map(filaPartido).join('')
+  ).join('');
+}
+
+function pintar(mensaje){
+  pintarFiltros();
+  document.querySelectorAll('#filtros .chip').forEach((b,i)=>{
+    b.setAttribute('aria-pressed', String(activos.has(EQUIPOS[i].key)));
+  });
+  pintarEncabezado();
+  pintarCalendario();
+  pintarDetalle();
+  const est = $('estado');
+  if(mensaje){ est.textContent = mensaje; est.hidden = false; }
+  else if(!partidos.length){ est.textContent = 'Sin partidos cargados todavía.'; est.hidden = false; }
+  else est.hidden = true;
+  pintarFuentes();
+  $('pie-actualizado').textContent = actualizado
+    ? 'Calendario revisado el '+textoDiaLargo(claveDia(actualizado))
+    : '';
+}
+
+function pintarFuentes(){
+  const caja = $('fuentes');
+  if(!FUENTES.length){ caja.hidden = true; return; }
+  caja.hidden = false;
+  const vistas = new Map();                 // un renglón por torneo, aunque tenga varios códigos
+  for(const f of FUENTES){
+    const k = f.equipo+'|'+f.torneo;
+    const prev = vistas.get(k);
+    if(!prev || f.encontrados > prev.encontrados) vistas.set(k, f);
+  }
+  const filas = [...vistas.values()].map(f => {
+    const e = eq(f.equipo);
+    const ok = f.encontrados > 0;
+    return `<li class="${ok?'fuente-ok':'fuente-no'}">${e ? e.corto : f.equipo} · ${f.torneo}: ${
+      ok ? f.encontrados+' partidos' : 'la fuente no respondió'}</li>`;
+  });
+  $('fuentes-lista').innerHTML = `<ul class="fuente-lista">${filas.join('')}</ul>
+    <p>Cuando una fuente no responde, la página sigue mostrando el calendario revisado a mano (<code>partidos.json</code>). Lo que falte se agrega en <code>manuales.json</code>.</p>`;
+}
+
+/* ---------- controles ---------- */
+$('mes-prev').onclick = () => { mesVista--; if(mesVista<0){mesVista=11;anioVista--;} diaSel=null; pintar(); };
+$('mes-next').onclick = () => { mesVista++; if(mesVista>11){mesVista=0;anioVista++;} diaSel=null; pintar(); };
+$('recargar').onclick = () => cargar({forzar:true});
+
+pintar();
+cargar();
+</script>
+</body>
+</html>

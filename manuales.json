@@ -1,0 +1,4 @@
+{
+  "_ayuda": "Correcciones y partidos sueltos. Tiene prioridad sobre partidos.json: si escribe el mismo equipo en el mismo día, gana lo que está aquí. Campos: equipo (lda, boca, miami, barca), fecha (AAAA-MM-DD), hora (HH:MM en 24 horas, hora de Costa Rica; se puede omitir si no está confirmada), rival, torneo, local (true si juega en casa), sede (opcional). Dejá la lista vacía si no hay nada que agregar.",
+  "partidos": []
+}
