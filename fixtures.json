@@ -1,0 +1,530 @@
+{
+ "actualizado": "2026-09-10T00:07:50.787855+00:00",
+ "fuentes": [
+  {
+   "equipo": "boca",
+   "torneo": "Fixtur.es (todas sus competencias)",
+   "code": "boca-juniors",
+   "respondio": true,
+   "encontrados": 11
+  },
+  {
+   "equipo": "miami",
+   "torneo": "Fixtur.es (todas sus competencias)",
+   "code": "inter-miami-cf",
+   "respondio": true,
+   "encontrados": 11
+  },
+  {
+   "equipo": "barca",
+   "torneo": "Fixtur.es (todas sus competencias)",
+   "code": "fc-barcelona",
+   "respondio": true,
+   "encontrados": 33
+  },
+  {
+   "equipo": "lda",
+   "torneo": "ESPN (Costa Rica y Concacaf)",
+   "code": "espn",
+   "respondio": false,
+   "encontrados": 0
+  }
+ ],
+ "partidos": [
+  {
+   "equipo": "boca",
+   "fecha": "2026-09-08",
+   "hora": "18:30",
+   "rival": "São Paulo [CS]",
+   "torneo": "Partido de Boca",
+   "local": true,
+   "sede": "Alberto José Armando (La Bombonera)"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-09-09",
+   "hora": "10:45",
+   "rival": "Feyenoord [CL]",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-09-09",
+   "hora": "18:30",
+   "rival": "Chicago Fire",
+   "torneo": "Partido de Inter Miami",
+   "local": false,
+   "sede": "Soldier Field"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-09-11",
+   "hora": "18:30",
+   "rival": "Central Córdoba (Santiago del Estero)",
+   "torneo": "Partido de Boca",
+   "local": true,
+   "sede": ""
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-09-12",
+   "hora": "17:30",
+   "rival": "Nashville SC",
+   "torneo": "Partido de Inter Miami",
+   "local": true,
+   "sede": "Nu"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-09-13",
+   "hora": "08:15",
+   "rival": "Levante",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Estadi Ciutat de València"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-09-15",
+   "hora": "18:30",
+   "rival": "São Paulo",
+   "torneo": "Partido de Boca",
+   "local": false,
+   "sede": "Estádio Cícero Pompeu de Toledo"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-09-16",
+   "hora": "13:30",
+   "rival": "Racing de Santander",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-09-19",
+   "hora": "13:00",
+   "rival": "Sevilla FC",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Ramón Sánchez Pizjuán"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-09-20",
+   "hora": "11:45",
+   "rival": "San Lorenzo",
+   "torneo": "Partido de Boca",
+   "local": false,
+   "sede": ""
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-09-20",
+   "hora": "17:00",
+   "rival": "San Diego FC",
+   "torneo": "Partido de Inter Miami",
+   "local": true,
+   "sede": "Nu"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-09-26",
+   "hora": "18:00",
+   "rival": "Racing Club",
+   "torneo": "Partido de Boca",
+   "local": false,
+   "sede": ""
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-09-27",
+   "hora": "17:00",
+   "rival": "Columbus Crew",
+   "torneo": "Partido de Inter Miami",
+   "local": false,
+   "sede": "ScottsMiracle-Gro Field"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-10-04",
+   "hora": "16:15",
+   "rival": "Unión Santa Fe",
+   "torneo": "Partido de Boca",
+   "local": true,
+   "sede": ""
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-10-10",
+   "hora": "17:30",
+   "rival": "D.C. United",
+   "torneo": "Partido de Inter Miami",
+   "local": true,
+   "sede": "Nu"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-10-10",
+   "hora": "18:00",
+   "rival": "Instituto Cordoba",
+   "torneo": "Partido de Boca",
+   "local": false,
+   "sede": ""
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-10-11",
+   "hora": "12:00",
+   "rival": "Getafe",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-10-13",
+   "hora": "13:00",
+   "rival": "Galatasaray",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "RAMS Park"
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-10-14",
+   "hora": "17:30",
+   "rival": "New York City FC",
+   "torneo": "Partido de Inter Miami",
+   "local": true,
+   "sede": "Nu"
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-10-17",
+   "hora": "17:30",
+   "rival": "Atlanta United FC",
+   "torneo": "Partido de Inter Miami",
+   "local": false,
+   "sede": "Mercedes-Benz"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-10-17",
+   "hora": "18:00",
+   "rival": "Talleres Córdoba",
+   "torneo": "Partido de Boca",
+   "local": true,
+   "sede": ""
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-10-18",
+   "hora": "12:00",
+   "rival": "Real Betis",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Estadio La Cartuja"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-10-20",
+   "hora": "13:00",
+   "rival": "Paris Saint-Germain",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Parc des Princes"
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-10-24",
+   "hora": "15:30",
+   "rival": "New York Red Bulls",
+   "torneo": "Partido de Inter Miami",
+   "local": false,
+   "sede": "Red Bull Arena"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-10-24",
+   "hora": "18:00",
+   "rival": "Independiente",
+   "torneo": "Partido de Boca",
+   "local": false,
+   "sede": ""
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-10-25",
+   "hora": "12:00",
+   "rival": "Real Madrid",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-10-28",
+   "hora": "17:30",
+   "rival": "FC Cincinnati",
+   "torneo": "Partido de Inter Miami",
+   "local": true,
+   "sede": "Nu"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-10-31",
+   "hora": "18:00",
+   "rival": "River Plate",
+   "torneo": "Partido de Boca",
+   "local": true,
+   "sede": ""
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-11-01",
+   "hora": "14:00",
+   "rival": "Deportivo Alavés",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-11-01",
+   "hora": "17:00",
+   "rival": "New England Revolution",
+   "torneo": "Partido de Inter Miami",
+   "local": false,
+   "sede": "Gillette"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-11-03",
+   "hora": "14:00",
+   "rival": "Aston Villa [CL]",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "miami",
+   "fecha": "2026-11-07",
+   "hora": "15:00",
+   "rival": "Charlotte FC",
+   "torneo": "Partido de Inter Miami",
+   "local": true,
+   "sede": "Nu"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-11-07",
+   "hora": "18:00",
+   "rival": "Defensa y Justicia",
+   "torneo": "Partido de Boca",
+   "local": true,
+   "sede": ""
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-11-08",
+   "hora": "14:00",
+   "rival": "Atlético Madrid",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Riyadh Air Metropolitano"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-11-22",
+   "hora": "14:00",
+   "rival": "Villarreal",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-11-25",
+   "hora": "11:45",
+   "rival": "Sabah",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Bank Respublika"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-11-29",
+   "hora": "14:00",
+   "rival": "Deportivo la Coruna",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Riazor"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-12-06",
+   "hora": "14:00",
+   "rival": "Celta de Vigo",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-12-08",
+   "hora": "14:00",
+   "rival": "Manchester City [CL]",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-12-13",
+   "hora": "14:00",
+   "rival": "Malaga",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "La Rosaleda"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-12-20",
+   "hora": "14:00",
+   "rival": "Real Sociedad",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-01-03",
+   "hora": "14:00",
+   "rival": "Espanyol",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "RCDE"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-01-10",
+   "hora": "14:00",
+   "rival": "CA Osasuna",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "El Sadar"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-01-17",
+   "hora": "14:00",
+   "rival": "Elche CF",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-01-20",
+   "hora": "14:00",
+   "rival": "Sporting Portugal",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Estádio José Alvalade"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-01-24",
+   "hora": "14:00",
+   "rival": "Deportivo Alavés",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Mendizorrotza"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-01-27",
+   "hora": "14:00",
+   "rival": "Como [CL]",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-01-31",
+   "hora": "14:00",
+   "rival": "Valencia",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-02-01",
+   "hora": "18:00",
+   "rival": "Atlético Madrid",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": ""
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-02-07",
+   "hora": "14:00",
+   "rival": "Atlético Madrid",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-02-14",
+   "hora": "14:00",
+   "rival": "Villarreal",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Estadio de la Cerámica"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-02-21",
+   "hora": "14:00",
+   "rival": "Levante",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-02-28",
+   "hora": "14:00",
+   "rival": "Athletic de Bilbao",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "San Mamés"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-03-07",
+   "hora": "14:00",
+   "rival": "Real Betis",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-03-14",
+   "hora": "12:00",
+   "rival": "Deportivo la Coruna",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  }
+ ]
+}
