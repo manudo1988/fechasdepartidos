@@ -1,26 +1,26 @@
 {
- "actualizado": "2026-09-10T00:07:50.787855+00:00",
+ "actualizado": "2026-09-14T11:02:36.069582+00:00",
  "fuentes": [
   {
    "equipo": "boca",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "boca-juniors",
    "respondio": true,
-   "encontrados": 11
+   "encontrados": 9
   },
   {
    "equipo": "miami",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "inter-miami-cf",
    "respondio": true,
-   "encontrados": 11
+   "encontrados": 9
   },
   {
    "equipo": "barca",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "fc-barcelona",
    "respondio": true,
-   "encontrados": 33
+   "encontrados": 32
   },
   {
    "equipo": "lda",
@@ -31,51 +31,6 @@
   }
  ],
  "partidos": [
-  {
-   "equipo": "boca",
-   "fecha": "2026-09-08",
-   "hora": "18:30",
-   "rival": "São Paulo [CS]",
-   "torneo": "Partido de Boca",
-   "local": true,
-   "sede": "Alberto José Armando (La Bombonera)"
-  },
-  {
-   "equipo": "barca",
-   "fecha": "2026-09-09",
-   "hora": "10:45",
-   "rival": "Feyenoord [CL]",
-   "torneo": "Partido del Barcelona",
-   "local": true,
-   "sede": "Spotify Camp Nou"
-  },
-  {
-   "equipo": "miami",
-   "fecha": "2026-09-09",
-   "hora": "18:30",
-   "rival": "Chicago Fire",
-   "torneo": "Partido de Inter Miami",
-   "local": false,
-   "sede": "Soldier Field"
-  },
-  {
-   "equipo": "boca",
-   "fecha": "2026-09-11",
-   "hora": "18:30",
-   "rival": "Central Córdoba (Santiago del Estero)",
-   "torneo": "Partido de Boca",
-   "local": true,
-   "sede": ""
-  },
-  {
-   "equipo": "miami",
-   "fecha": "2026-09-12",
-   "hora": "17:30",
-   "rival": "Nashville SC",
-   "torneo": "Partido de Inter Miami",
-   "local": true,
-   "sede": "Nu"
-  },
   {
    "equipo": "barca",
    "fecha": "2026-09-13",
@@ -158,6 +113,15 @@
    "sede": ""
   },
   {
+   "equipo": "barca",
+   "fecha": "2026-10-10",
+   "hora": "10:30",
+   "rival": "Getafe",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
    "equipo": "miami",
    "fecha": "2026-10-10",
    "hora": "17:30",
@@ -174,15 +138,6 @@
    "torneo": "Partido de Boca",
    "local": false,
    "sede": ""
-  },
-  {
-   "equipo": "barca",
-   "fecha": "2026-10-11",
-   "hora": "12:00",
-   "rival": "Getafe",
-   "torneo": "Partido del Barcelona",
-   "local": true,
-   "sede": "Spotify Camp Nou"
   },
   {
    "equipo": "barca",
@@ -353,7 +308,7 @@
    "rival": "Sabah",
    "torneo": "Partido del Barcelona",
    "local": false,
-   "sede": "Bank Respublika"
+   "sede": "Baku Olympic"
   },
   {
    "equipo": "barca",
