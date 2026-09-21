@@ -1,12 +1,12 @@
 {
- "actualizado": "2026-09-14T11:02:36.069582+00:00",
+ "actualizado": "2026-09-21T11:02:56.875988+00:00",
  "fuentes": [
   {
    "equipo": "boca",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "boca-juniors",
    "respondio": true,
-   "encontrados": 9
+   "encontrados": 10
   },
   {
    "equipo": "miami",
@@ -20,7 +20,7 @@
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "fc-barcelona",
    "respondio": true,
-   "encontrados": 32
+   "encontrados": 30
   },
   {
    "equipo": "lda",
@@ -31,42 +31,6 @@
   }
  ],
  "partidos": [
-  {
-   "equipo": "barca",
-   "fecha": "2026-09-13",
-   "hora": "08:15",
-   "rival": "Levante",
-   "torneo": "Partido del Barcelona",
-   "local": false,
-   "sede": "Estadi Ciutat de València"
-  },
-  {
-   "equipo": "boca",
-   "fecha": "2026-09-15",
-   "hora": "18:30",
-   "rival": "São Paulo",
-   "torneo": "Partido de Boca",
-   "local": false,
-   "sede": "Estádio Cícero Pompeu de Toledo"
-  },
-  {
-   "equipo": "barca",
-   "fecha": "2026-09-16",
-   "hora": "13:30",
-   "rival": "Racing de Santander",
-   "torneo": "Partido del Barcelona",
-   "local": true,
-   "sede": "Spotify Camp Nou"
-  },
-  {
-   "equipo": "barca",
-   "fecha": "2026-09-19",
-   "hora": "13:00",
-   "rival": "Sevilla FC",
-   "torneo": "Partido del Barcelona",
-   "local": false,
-   "sede": "Ramón Sánchez Pizjuán"
-  },
   {
    "equipo": "boca",
    "fecha": "2026-09-20",
@@ -149,6 +113,15 @@
    "sede": "RAMS Park"
   },
   {
+   "equipo": "boca",
+   "fecha": "2026-10-13",
+   "hora": "18:00",
+   "rival": "Vasco da Gama [CS]",
+   "torneo": "Partido de Boca",
+   "local": true,
+   "sede": ""
+  },
+  {
    "equipo": "miami",
    "fecha": "2026-10-14",
    "hora": "17:30",
@@ -156,6 +129,15 @@
    "torneo": "Partido de Inter Miami",
    "local": true,
    "sede": "Nu"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2026-10-17",
+   "hora": "10:30",
+   "rival": "Real Betis",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Estadio La Cartuja"
   },
   {
    "equipo": "miami",
@@ -177,21 +159,21 @@
   },
   {
    "equipo": "barca",
-   "fecha": "2026-10-18",
-   "hora": "12:00",
-   "rival": "Real Betis",
-   "torneo": "Partido del Barcelona",
-   "local": false,
-   "sede": "Estadio La Cartuja"
-  },
-  {
-   "equipo": "barca",
    "fecha": "2026-10-20",
    "hora": "13:00",
    "rival": "Paris Saint-Germain",
    "torneo": "Partido del Barcelona",
    "local": false,
    "sede": "Parc des Princes"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-10-20",
+   "hora": "18:00",
+   "rival": "Vasco da Gama",
+   "torneo": "Partido de Boca",
+   "local": false,
+   "sede": ""
   },
   {
    "equipo": "miami",
@@ -420,8 +402,8 @@
   },
   {
    "equipo": "barca",
-   "fecha": "2027-02-01",
-   "hora": "18:00",
+   "fecha": "2027-02-02",
+   "hora": "13:00",
    "rival": "Atlético Madrid",
    "torneo": "Partido del Barcelona",
    "local": true,
@@ -480,6 +462,15 @@
    "torneo": "Partido del Barcelona",
    "local": true,
    "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-03-21",
+   "hora": "12:00",
+   "rival": "Rayo Vallecano",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Estadio de Vallecas"
   }
  ]
 }
