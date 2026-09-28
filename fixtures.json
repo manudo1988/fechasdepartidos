@@ -1,19 +1,19 @@
 {
- "actualizado": "2026-09-21T11:02:56.875988+00:00",
+ "actualizado": "2026-09-28T11:03:53.880592+00:00",
  "fuentes": [
   {
    "equipo": "boca",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "boca-juniors",
    "respondio": true,
-   "encontrados": 10
+   "encontrados": 9
   },
   {
    "equipo": "miami",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "inter-miami-cf",
    "respondio": true,
-   "encontrados": 9
+   "encontrados": 8
   },
   {
    "equipo": "barca",
@@ -33,26 +33,8 @@
  "partidos": [
   {
    "equipo": "boca",
-   "fecha": "2026-09-20",
-   "hora": "11:45",
-   "rival": "San Lorenzo",
-   "torneo": "Partido de Boca",
-   "local": false,
-   "sede": ""
-  },
-  {
-   "equipo": "miami",
-   "fecha": "2026-09-20",
-   "hora": "17:00",
-   "rival": "San Diego FC",
-   "torneo": "Partido de Inter Miami",
-   "local": true,
-   "sede": "Nu"
-  },
-  {
-   "equipo": "boca",
-   "fecha": "2026-09-26",
-   "hora": "18:00",
+   "fecha": "2026-09-27",
+   "hora": "14:00",
    "rival": "Racing Club",
    "torneo": "Partido de Boca",
    "local": false,
@@ -69,11 +51,20 @@
   },
   {
    "equipo": "boca",
-   "fecha": "2026-10-04",
-   "hora": "16:15",
+   "fecha": "2026-10-02",
+   "hora": "18:30",
    "rival": "Unión Santa Fe",
    "torneo": "Partido de Boca",
    "local": true,
+   "sede": ""
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-10-09",
+   "hora": "16:30",
+   "rival": "Instituto Cordoba",
+   "torneo": "Partido de Boca",
+   "local": false,
    "sede": ""
   },
   {
@@ -95,15 +86,6 @@
    "sede": "Nu"
   },
   {
-   "equipo": "boca",
-   "fecha": "2026-10-10",
-   "hora": "18:00",
-   "rival": "Instituto Cordoba",
-   "torneo": "Partido de Boca",
-   "local": false,
-   "sede": ""
-  },
-  {
    "equipo": "barca",
    "fecha": "2026-10-13",
    "hora": "13:00",
@@ -115,7 +97,7 @@
   {
    "equipo": "boca",
    "fecha": "2026-10-13",
-   "hora": "18:00",
+   "hora": "18:30",
    "rival": "Vasco da Gama [CS]",
    "torneo": "Partido de Boca",
    "local": true,
@@ -169,7 +151,7 @@
   {
    "equipo": "boca",
    "fecha": "2026-10-20",
-   "hora": "18:00",
+   "hora": "18:30",
    "rival": "Vasco da Gama",
    "torneo": "Partido de Boca",
    "local": false,
@@ -196,7 +178,7 @@
   {
    "equipo": "barca",
    "fecha": "2026-10-25",
-   "hora": "12:00",
+   "hora": "14:00",
    "rival": "Real Madrid",
    "torneo": "Partido del Barcelona",
    "local": true,
@@ -232,7 +214,7 @@
   {
    "equipo": "miami",
    "fecha": "2026-11-01",
-   "hora": "17:00",
+   "hora": "18:00",
    "rival": "New England Revolution",
    "torneo": "Partido de Inter Miami",
    "local": false,
@@ -296,7 +278,7 @@
    "equipo": "barca",
    "fecha": "2026-11-29",
    "hora": "14:00",
-   "rival": "Deportivo la Coruna",
+   "rival": "RC Deportivo",
    "torneo": "Partido del Barcelona",
    "local": false,
    "sede": "Riazor"
@@ -458,7 +440,7 @@
    "equipo": "barca",
    "fecha": "2027-03-14",
    "hora": "12:00",
-   "rival": "Deportivo la Coruna",
+   "rival": "RC Deportivo",
    "torneo": "Partido del Barcelona",
    "local": true,
    "sede": "Spotify Camp Nou"
