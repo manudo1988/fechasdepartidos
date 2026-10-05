@@ -1,26 +1,26 @@
 {
- "actualizado": "2026-09-28T11:03:53.880592+00:00",
+ "actualizado": "2026-10-05T11:04:45.316110+00:00",
  "fuentes": [
   {
    "equipo": "boca",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "boca-juniors",
    "respondio": true,
-   "encontrados": 9
+   "encontrados": 8
   },
   {
    "equipo": "miami",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "inter-miami-cf",
    "respondio": true,
-   "encontrados": 8
+   "encontrados": 7
   },
   {
    "equipo": "barca",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "fc-barcelona",
    "respondio": true,
-   "encontrados": 30
+   "encontrados": 31
   },
   {
    "equipo": "lda",
@@ -31,33 +31,6 @@
   }
  ],
  "partidos": [
-  {
-   "equipo": "boca",
-   "fecha": "2026-09-27",
-   "hora": "14:00",
-   "rival": "Racing Club",
-   "torneo": "Partido de Boca",
-   "local": false,
-   "sede": ""
-  },
-  {
-   "equipo": "miami",
-   "fecha": "2026-09-27",
-   "hora": "17:00",
-   "rival": "Columbus Crew",
-   "torneo": "Partido de Inter Miami",
-   "local": false,
-   "sede": "ScottsMiracle-Gro Field"
-  },
-  {
-   "equipo": "boca",
-   "fecha": "2026-10-02",
-   "hora": "18:30",
-   "rival": "Unión Santa Fe",
-   "torneo": "Partido de Boca",
-   "local": true,
-   "sede": ""
-  },
   {
    "equipo": "boca",
    "fecha": "2026-10-09",
@@ -194,6 +167,15 @@
    "sede": "Nu"
   },
   {
+   "equipo": "barca",
+   "fecha": "2026-10-31",
+   "hora": "14:00",
+   "rival": "Deportivo Alavés",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
    "equipo": "boca",
    "fecha": "2026-10-31",
    "hora": "18:00",
@@ -201,15 +183,6 @@
    "torneo": "Partido de Boca",
    "local": true,
    "sede": ""
-  },
-  {
-   "equipo": "barca",
-   "fecha": "2026-11-01",
-   "hora": "14:00",
-   "rival": "Deportivo Alavés",
-   "torneo": "Partido del Barcelona",
-   "local": true,
-   "sede": "Spotify Camp Nou"
   },
   {
    "equipo": "miami",
@@ -255,6 +228,15 @@
    "torneo": "Partido del Barcelona",
    "local": false,
    "sede": "Riyadh Air Metropolitano"
+  },
+  {
+   "equipo": "boca",
+   "fecha": "2026-11-13",
+   "hora": "18:00",
+   "rival": "Banfield",
+   "torneo": "Partido de Boca",
+   "local": false,
+   "sede": ""
   },
   {
    "equipo": "barca",
@@ -453,6 +435,15 @@
    "torneo": "Partido del Barcelona",
    "local": false,
    "sede": "Estadio de Vallecas"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-04-04",
+   "hora": "12:00",
+   "rival": "Sevilla FC",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
   }
  ]
 }
