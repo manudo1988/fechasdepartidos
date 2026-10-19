@@ -1,19 +1,19 @@
 {
- "actualizado": "2026-10-12T11:07:30.309930+00:00",
+ "actualizado": "2026-10-19T17:13:59.711919+00:00",
  "fuentes": [
   {
    "equipo": "boca",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "boca-juniors",
    "respondio": true,
-   "encontrados": 7
+   "encontrados": 5
   },
   {
    "equipo": "miami",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "inter-miami-cf",
    "respondio": true,
-   "encontrados": 6
+   "encontrados": 4
   },
   {
    "equipo": "barca",
@@ -31,60 +31,6 @@
   }
  ],
  "partidos": [
-  {
-   "equipo": "barca",
-   "fecha": "2026-10-13",
-   "hora": "13:00",
-   "rival": "Galatasaray",
-   "torneo": "Partido del Barcelona",
-   "local": false,
-   "sede": "RAMS Park"
-  },
-  {
-   "equipo": "boca",
-   "fecha": "2026-10-13",
-   "hora": "18:30",
-   "rival": "Vasco da Gama [CS]",
-   "torneo": "Partido de Boca",
-   "local": true,
-   "sede": ""
-  },
-  {
-   "equipo": "miami",
-   "fecha": "2026-10-14",
-   "hora": "17:30",
-   "rival": "New York City FC",
-   "torneo": "Partido de Inter Miami",
-   "local": true,
-   "sede": "Nu"
-  },
-  {
-   "equipo": "boca",
-   "fecha": "2026-10-16",
-   "hora": "18:30",
-   "rival": "Talleres Córdoba",
-   "torneo": "Partido de Boca",
-   "local": true,
-   "sede": ""
-  },
-  {
-   "equipo": "barca",
-   "fecha": "2026-10-17",
-   "hora": "10:30",
-   "rival": "Real Betis",
-   "torneo": "Partido del Barcelona",
-   "local": false,
-   "sede": "Estadio La Cartuja"
-  },
-  {
-   "equipo": "miami",
-   "fecha": "2026-10-17",
-   "hora": "17:30",
-   "rival": "Atlanta United FC",
-   "torneo": "Partido de Inter Miami",
-   "local": false,
-   "sede": "Mercedes-Benz"
-  },
   {
    "equipo": "barca",
    "fecha": "2026-10-20",
@@ -426,6 +372,24 @@
    "torneo": "Partido del Barcelona",
    "local": false,
    "sede": "El Sardineros"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-04-18",
+   "hora": "12:00",
+   "rival": "Espanyol",
+   "torneo": "Partido del Barcelona",
+   "local": true,
+   "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "barca",
+   "fecha": "2027-04-21",
+   "hora": "12:00",
+   "rival": "Celta de Vigo",
+   "torneo": "Partido del Barcelona",
+   "local": false,
+   "sede": "Balaidos"
   }
  ]
 }
