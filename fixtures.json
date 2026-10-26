@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-10-19T17:13:59.711919+00:00",
+ "actualizado": "2026-10-26T17:03:03.802992+00:00",
  "fuentes": [
   {
    "equipo": "boca",
@@ -13,51 +13,24 @@
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "inter-miami-cf",
    "respondio": true,
-   "encontrados": 4
+   "encontrados": 3
   },
   {
    "equipo": "barca",
    "torneo": "Fixtur.es (todas sus competencias)",
    "code": "fc-barcelona",
    "respondio": true,
-   "encontrados": 31
+   "encontrados": 30
   },
   {
    "equipo": "lda",
    "torneo": "ESPN (Costa Rica y Concacaf)",
    "code": "espn",
-   "respondio": false,
-   "encontrados": 0
+   "respondio": true,
+   "encontrados": 1
   }
  ],
  "partidos": [
-  {
-   "equipo": "barca",
-   "fecha": "2026-10-20",
-   "hora": "13:00",
-   "rival": "Paris Saint-Germain",
-   "torneo": "Partido del Barcelona",
-   "local": false,
-   "sede": "Parc des Princes"
-  },
-  {
-   "equipo": "boca",
-   "fecha": "2026-10-20",
-   "hora": "18:30",
-   "rival": "Vasco da Gama",
-   "torneo": "Partido de Boca",
-   "local": false,
-   "sede": ""
-  },
-  {
-   "equipo": "miami",
-   "fecha": "2026-10-24",
-   "hora": "15:30",
-   "rival": "New York Red Bulls",
-   "torneo": "Partido de Inter Miami",
-   "local": false,
-   "sede": "Red Bull Arena"
-  },
   {
    "equipo": "boca",
    "fecha": "2026-10-25",
@@ -75,6 +48,15 @@
    "torneo": "Partido del Barcelona",
    "local": true,
    "sede": "Spotify Camp Nou"
+  },
+  {
+   "equipo": "lda",
+   "fecha": "2026-10-25",
+   "hora": "18:00",
+   "rival": "Pérez Zeledón",
+   "torneo": "Primera División",
+   "local": true,
+   "sede": "Alejandro Morera Soto"
   },
   {
    "equipo": "miami",
@@ -150,17 +132,26 @@
   },
   {
    "equipo": "boca",
-   "fecha": "2026-11-13",
-   "hora": "18:00",
+   "fecha": "2026-11-14",
+   "hora": "16:00",
    "rival": "Banfield",
    "torneo": "Partido de Boca",
    "local": false,
    "sede": ""
   },
   {
+   "equipo": "boca",
+   "fecha": "2026-11-20",
+   "hora": "18:00",
+   "rival": "Atlético Mineiro",
+   "torneo": "Partido de Boca",
+   "local": false,
+   "sede": "Metropolitano Roberto Meléndez"
+  },
+  {
    "equipo": "barca",
    "fecha": "2026-11-22",
-   "hora": "14:00",
+   "hora": "07:00",
    "rival": "Villarreal",
    "torneo": "Partido del Barcelona",
    "local": true,
